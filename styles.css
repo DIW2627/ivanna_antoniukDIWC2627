@@ -1,0 +1,352 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Turret+Road:wght@400;700&display=swap');
+
+:root {
+    --color-principal: #C79B3B;
+    --color-secundario: #005A82;
+    --color-acento: #A0A7B4;
+    --color-fondo-claro: #F0E6D2;
+    --color-fondo-oscuro: #0A1428;
+
+    --fuente-titulos: "Turret Road", sans-serif;
+    --fuente-texto: "Space Mono", monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-fondo-oscuro);
+    font-family: var(--fuente-texto);
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+.hero {
+    min-height: 85vh;
+    
+background: linear-gradient(#000000c0, #000000b0),
+            url("img/estrellas.webp") center center / cover no-repeat;
+background-repeat: no-repeat;
+background-position: center center;
+background-color: var(--color-fondo-oscuro);
+
+    color: var(--color-fondo-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero .eyebrow {
+    color: var(--color-principal);
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.hero h1 {
+    color: var(--color-principal);
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero .subtitulo {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+
+.seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.seccion h2 {
+    color: var(--color-secundario);
+    font-size: 2.4rem;
+    margin-top: 0;
+}
+
+.destacado {
+    color: var(--color-secundario);
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-left: 4px solid var(--color-principal);
+    padding-left: 20px;
+    margin: 30px 0;
+}
+
+.juego-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.bloque {
+    background-color: white;
+    padding: 28px;
+    border-radius: 12px;
+    border-top: 4px solid var(--color-principal);
+    box-shadow: 0 8px 24px rgba(10, 20, 40, 0.08);
+}
+
+.bloque h3 {
+    color: var(--color-secundario);
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+
+.personaje {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-fondo-claro);
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.personaje-imagen img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.personaje-texto h2 {
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.personaje-texto .eyebrow {
+    color: var(--color-acento);
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.personaje-texto .rol {
+    color: var(--color-principal);
+    font-weight: bold;
+}
+
+.personaje-texto a {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 22px;
+    background-color: var(--color-principal);
+    color: var(--color-fondo-oscuro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.personaje-texto a:hover {
+    background-color: var(--color-fondo-claro);
+    transform: translateY(-3px);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--color-principal);
+    color: var(--color-fondo-oscuro);
+}
+
+.bloque {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bloque:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(10, 20, 40, 0.14);
+}
+
+.personaje-imagen img {
+    transition: transform 0.3s ease;
+}
+
+.personaje-imagen img:hover {
+    transform: scale(1.02);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .juego-info {
+        grid-template-columns: 1fr;
+    }
+
+    .personaje {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .personaje-imagen img {
+        height: 300px;
+    }
+
+    .seccion {
+        padding: 56px 20px;
+    }
+
+    .seccion h2 {
+        font-size: 2rem;
+    }
+}
+
+
+#presentacion {
+    background-color: var(--color-fondo-claro);
+}
+
+#juego {
+    background-color: #ffffff;
+}
+
+
+/* SECCIÓN DESCUBRIMIENTOS */
+
+.coleccion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    border: 2px solid var(--color-acento);
+    border-radius: 12px;
+    margin: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tarjeta h3 {
+    color: var(--color-secundario);
+    margin: 18px 0 10px;
+}
+
+.tarjeta p {
+    margin: 10px 0;
+}
+
+.tarjeta .dato {
+    color: var(--color-secundario);
+    font-weight: bold;
+    padding: 10px;
+    background-color: var(--color-fondo-claro);
+    border-radius: 6px;
+}
+
+/* Tarjeta destacada */
+#tarjeta2 {
+    outline: 4px solid var(--color-principal);
+    outline-offset: 4px;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+    .coleccion {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+
+/* CARACTERÍSTICAS DE LA CAPITANA */
+
+.personaje-texto {
+    text-align: left;
+    font-family: var(--fuente-texto);
+}
+
+.personaje-texto h2 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.personaje-texto .rol {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0;
+}
+
+.caracteristicas li {
+    padding: 10px 0;
+    border-bottom: 1px solid #a0a7b4;
+    font-size: 0.95rem;
+}
+
+.caracteristicas li::before {
+    content: "✦";
+    color: var(--color-principal);
+    margin-right: 12px;
+}
+
+.personaje-texto a {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 16px;
+    background-color: var(--color-principal);
+    color: var(--color-fondo-oscuro);
+    text-decoration: none;
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.personaje-texto a:hover {
+    background-color: var(--color-fondo-claro);
+    text-decoration: underline;
+    transform: translateY(-3px);
+}
